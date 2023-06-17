@@ -1,0 +1,66 @@
+{% include 'navbar.html'%}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{% static 'about.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+       <H1 class="header"> About Us </H1>
+       
+    <div>
+        <h3 class="title">ZAF Nigeria</h3>
+        <div class="sec">
+        <div class="img">
+            <img src="{% static 'images/screenshot-2020-12-23-at-8.49.34-pm-1.png'%}" alt="">
+        </div>
+    <div class="sec_two">
+        <h4>MOTTO:</h4>
+        <p>Transforming the Mind</p>
+
+        <h4>VISION:</h4>
+        <p>Building a Society free from Human Right Abuse, Social Vices and Gender Discrimination.</p>
+
+        <h4>MISSION:</h4>
+        <p>
+            ZAF Nigeria exists to reach out to the society through advocacy programs and trainings, rallies and campaigns, protection of citizens’ right, sensitization and awareness.
+        </p>
+
+        <h4>AIM AND OBJECTIVES:</h4>
+        <p>
+                To restore hope and justice to the marginalized and dicriminated, especially victims of rape. <br>
+                To advocate for academic excellence among school students. <br>
+                To advocate for the total freedom of all. i.e pyschologically and socially. <br>
+                To campaign for community growth and development. <br>
+                
+        </p>
+    </div>
+</div>
+</div>
+<section>
+        <div class="container">  
+            <h1 class="mt-5">Team Members</h1>
+            <div class="row">
+                {% for team in teams %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <img src="{{ team.image.url }}" alt="{{ team.name }}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ team.name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ team.position }}</h6>
+                            
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        </section>
+</body>
+
+</html>

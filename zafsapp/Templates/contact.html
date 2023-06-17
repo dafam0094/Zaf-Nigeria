@@ -1,0 +1,62 @@
+{% include 'navbar.html'%}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'contact.css'%}">
+</head>
+
+
+<form action="">
+    
+    <h1>Contact</h1>
+    <center>
+    <p class="p">Don’t hesitate to reach out with the contact information below for
+     Inquiries, Support, Donations, Partnership and Sponsorship, or 
+     send a message using the form.</p>
+    </center>
+    
+   
+     <div class="div">
+         <div class="div_one">
+             <div class="h2">
+                    <h2>Get in Touch</h2>
+                    <p></p>
+                    <p id="contact-mail">Email: <a href="zionadvocacyfoundationnigeria@yahoo.com">zionadvocacyfoundationnigeria@yahoo.com</a></p>
+                    <p id="contact-phone">Phone: <a href="tel:+1234567890, +2348149925520">+2348068349999, +2348149925520</a></p>
+                    <div>
+                        <a href="https://www.linkedin.com"><img src="linkedin-logo.png" alt="LinkedIn"></a>
+                        <a href="https://wa.me/1234567890"><img src="whatsapp-logo.png" alt="WhatsApp"></a>
+                    </div>
+             </div>
+             
+         </div>
+         <div class="div_two">
+             <div class="h2">
+                 <h2>Send Us a Message</h2>
+                 {% if success %}
+        <p class="success-message">Thank you for your message!</p>
+    {% endif %}
+    <form method="POST" action="{% url 'contact' %}">
+        {% csrf_token %}
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" name="name" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email"  class="form-control" name="email" required>
+        </div>
+        <div>
+            <label for="message">Message:</label>
+            <textarea  class="form-control" name="message" required></textarea>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+            </div>
+             
+
+         </div>
+     </div>
+     {% include 'footer.html'%}
+</form> 

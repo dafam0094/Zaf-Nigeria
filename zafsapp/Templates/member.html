@@ -1,0 +1,43 @@
+{% include 'navbar.html'%}
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <section>
+                <div class="container">
+                    <h2>MEMBERS</h2>            
+                    <table class="table table-condensed">
+                      <thead>
+                        <tr>
+                          <th scope="col">First Name</th>
+                          <th scope="col">Middel Name</th>
+                          <th scope="col">Last Name</th>
+                          <th scope="col">Phone Number</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Known</th>
+                          <th scope="col">Operation</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for value in data %}
+                        <tr>  
+                          <td>{{value.first_name}}</td>
+                          <td>{{value.middel_name}}</td>
+                          <td>{{value.last_name}}</td>
+                          <td>{{value.phone_number}}</td>
+                          <td>{{value.email}}</td>
+                          <td>{{value.how_know}}</td>
+                          <td>
+                              <a href="" class="btn btn-primary">Edit</a> 
+                              <a href="" class="btn btn-danger">Delete</a>
+                          </td>
+                        </tr> 
+                        {% endfor %}            
+</body>
+</html>

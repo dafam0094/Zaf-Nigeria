@@ -1,0 +1,27 @@
+#image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 34px;
+    margin-bottom: 0;
+}
+h1{
+    color: white;
+    display: flex;
+    background-color: aqua;
+    height: 90px;
+    align-items:center;
+    justify-content: center;
+}
+
+.image {
+    text-align: center;
+    margin: 6px;
+    
+}
+.image img {
+    
+    width: 250px;
+    
+}
+

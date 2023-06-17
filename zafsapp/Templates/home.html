@@ -1,0 +1,60 @@
+{% include 'navbar.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+
+        <div class="card text-bg-dark">
+                <img src="{% static 'images/img-1.png'%}" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <center>
+                  <h5 class="card-title">Welcome to ZAF Nigeria</h5>
+                  </center>
+                  <center>
+                  <p class="card-text">We are a non-profit organization dedicated to advocates for Community Growth
+                        and Development, social freedom and Injustice liberators. This is a platform birthed 
+                        by a genuine burden towards building a Society and a nation free from all forms of human 
+                        rights abuse and social vices. We are that voice that preach justice, freedom and development
+                        in all areas of life.</p>
+                    </center>
+                <center>
+                  <p class="card-text"><small>
+                        <a href="{% url 'joinus' %}" class="btn btn-primary">Join Us</a> 
+                        <a href="{% url 'donate' %}" class="btn btn-danger">Donate Now</a>
+                  </p>
+                </center>
+                </div>
+                </div>
+                <section class="sec_two">
+                    <div class="header">
+                        <p>Excellence</p>
+                        <p>Professionalism</p>
+                        <p>Expertise</p>    
+                    </div>
+                    <div class="image">
+                       
+                        <img src="{% static 'images/img-1.png' %}" alt="zaf logo" srcset="">
+                        <img src="{% static 'images/img-2.png' %}" alt="zaf logo" srcset="">
+                        <img src="{% static 'images/img-3.png' %}" alt="zaf logo" srcset="">
+                    </div>
+                    <div class="text">
+                        <p>To be advocates for Community Growth and Development, social freedom and Injustice liberators.
+                                This is a platform birthed by a genuine burden towards building a Society and a nation free from all forms of human rights abuse and social vices. We are that voice that preach justice, freedom and development in all areas of life.<b> We are the Voice for the Voiceless.</b>
+                                </p>
+                        <p>ZAF Nigeria exists to reach out to the society through Advocacy Programs and Trainings, Rallies and Campaigns, Protection of citizens’ right, Sensitization and Awareness.
+                                We are a platform for the restoration of hope and Justice to the abused and marginalized. Therefore, we pursue Justice no matter what it may cause.
+                                </p>
+                        <p>Cardinally, we @ZAF Nigeria are deeply interested in the preventive measures towards all vices. Primarily, we advocate for: the equal rights of all individuals, the total freedom of all, academic excellence among students, community growth and development.</p>   
+                    </div>
+                </section>
+        
+</body>
+{% include 'footer.html'%}
+</html>

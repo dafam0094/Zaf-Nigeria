@@ -1,0 +1,18 @@
+        
+        .group{
+            width: 50%;
+            margin-left: 30%;
+            margin-top: 20px;           
+        }
+        
+        .form-group{
+            color: black;
+        }
+        h1{
+            color: white;
+            display: flex;
+            background-color: aqua;
+            height: 90px;
+            align-items:center;
+            justify-content: center;
+        }

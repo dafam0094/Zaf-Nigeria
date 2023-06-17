@@ -1,0 +1,54 @@
+{% include 'navbar.html'%}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'join-us.css'%}">
+</head>
+<body>
+    <center>
+        <H1>Join Us</H1>
+    </center>
+  
+<form action="", method="POST" class="group">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="exampleInputEmail1">First Name</label>
+        <input type="text" class="form-control"   placeholder="Enter First Name" name="first_name" required>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Middle Name</label>
+        <input type="text" class="form-control"  placeholder="Enter Middel Name" name="middel_name">
+      </div>
+      <div class="form-group">
+              <label for="exampleInputEmail1">Last Name</label>
+              <input type="text" class="form-control"  placeholder="Enter Last Name" name="last_name" required>
+            </div>
+      <div class="form-group">
+              <label for="exampleInputEmail1">Phone Number</label>
+              <input type="number" class="form-control"  placeholder="Enter Phone number" name="phone_number" required>
+             </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Email Address</label>
+        <input type="email" class="form-control"  placeholder="Email address" name="email" required>
+      </div>
+      <div class="form-group">
+            <label for="exampleInputEmail1">How Do You Know About Us</label>
+            <select name="how_know" class="form-control">
+                <option value="poster">Posters</option>
+                <option value="media">Media</option>
+                <option value="campaign">Campaign</option>
+            </select> 
+          </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+   
+    
+    </form>  
+</body>
+</html>

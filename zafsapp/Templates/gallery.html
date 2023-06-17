@@ -1,0 +1,30 @@
+{% include 'navbar.html'%}
+{% load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'gallery.css' %}">
+</head>
+<body>
+    <h1>Gallery</h1>
+    <div id="image-container">
+        {% for image in images reversed %}
+            {% if forloop.counter0|divisibleby:5 %}
+                <div class="row">
+            {% endif %}
+            <div class="image">
+                <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                <p>{{ image.title }}</p>
+            </div>
+            {% if forloop.counter|divisibleby:5 or forloop.last %}
+                </div>
+            {% endif %}
+        {% empty %}
+            <p>No images available</p>
+        {% endfor %}
+    </div>
+    <script src="{% static 'gallery.js' %}"></script>
+</body>
+</html>
+{% include 'footer.html'%}
