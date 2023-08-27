@@ -7,44 +7,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>About Us</title>
-    <link rel="stylesheet" href="{% static 'about.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    
+<style>
+      
+/* Reset some default browser styles */
+body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  
+}
+
+body{
+    margin-top: 5.5%;
+}
+.sec_two h4{
+  font-weight: bold; 
+  background-color: rgb(157, 211, 229);
+  color: white; 
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 20px;
+  
+  
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: rgb(157, 211, 229);
+  color: white;
+  height: 60px;
+  margin-top: 20%;
+  
+}
+
+.title {
+  color: #333;
+}
+
+.img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top; /* Ensure the image is positioned at the top */
+}
+
+.sec_two {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+
+
+.team-members {
+  margin-top: 30px;
+  color: rgb(157, 211, 229);
+}
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card-img-top {
+  max-height: 400px;
+  color: rgb(157, 211, 229);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-subtitle {
+  color: #777;
+  font-size: 14px;
+}
+.mt-5{
+    color: rgb(157, 211, 229);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sec_two {
+    padding: 10px;
+  }
+
+  .team-members .col-md-4 {
+    margin-bottom: 20px;
+    color: rgb(157, 211, 229);
+  }
+}
+
+</style>
 </head>
 <body>
-       <H1 class="header"> About Us </H1>
+    
+    <h1 class="header text-center mt-4" id="h1">About Us</h1>
+    <div class="container">
        
-    <div>
-        <h3 class="title">ZAF Nigeria</h3>
-        <div class="sec">
-        <div class="img">
-            <img src="{% static 'images/screenshot-2020-12-23-at-8.49.34-pm-1.png'%}" alt="">
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3 class="title">ZAF Nigeria</h3>
+                <div class="sec">
+                    <div class="img">
+                        <img src="{% static 'images/screenshot-2020-12-23-at-8.49.34-pm-1.png'%}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="sec_two">
+                    <h4>MOTTO:</h4>
+                    <p>Transforming the Mind</p>
+
+                    <h4>VISION:</h4>
+                    <p>Building a Society free from Human Right Abuse, Social Vices and Gender Discrimination.</p>
+
+                    <h4>MISSION:</h4>
+                    <p>
+                        ZAF Nigeria exists to reach out to the society through advocacy programs and trainings, rallies and campaigns, protection of citizens’ right, sensitization and awareness.
+                    </p>
+
+                    <h4>AIM AND OBJECTIVES:</h4>
+                    <p>
+                        To restore hope and justice to the marginalized and discriminated, especially victims of rape. <br>
+                        To advocate for academic excellence among school students. <br>
+                        To advocate for the total freedom of all, i.e., psychologically and socially. <br>
+                        To campaign for community growth and development. <br>
+                    </p>
+                </div>
+            </div>
         </div>
-    <div class="sec_two">
-        <h4>MOTTO:</h4>
-        <p>Transforming the Mind</p>
 
-        <h4>VISION:</h4>
-        <p>Building a Society free from Human Right Abuse, Social Vices and Gender Discrimination.</p>
-
-        <h4>MISSION:</h4>
-        <p>
-            ZAF Nigeria exists to reach out to the society through advocacy programs and trainings, rallies and campaigns, protection of citizens’ right, sensitization and awareness.
-        </p>
-
-        <h4>AIM AND OBJECTIVES:</h4>
-        <p>
-                To restore hope and justice to the marginalized and dicriminated, especially victims of rape. <br>
-                To advocate for academic excellence among school students. <br>
-                To advocate for the total freedom of all. i.e pyschologically and socially. <br>
-                To campaign for community growth and development. <br>
-                
-        </p>
-    </div>
-</div>
-</div>
-<section>
-        <div class="container">  
-            <h1 class="mt-5">Team Members</h1>
+        <section class="mt-5">
+            <h1 class="text-center">Team Members</h1>
             <div class="row">
                 {% for team in teams %}
                 <div class="col-md-4">
@@ -53,14 +161,15 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ team.name }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{ team.position }}</h6>
-                            
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
-        </div>
         </section>
-</body>
+    </div>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 
 </html>
+{% include 'footer.html'%}
+</body>

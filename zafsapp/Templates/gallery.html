@@ -5,26 +5,41 @@
 <head>
     <title>Gallery</title>
     <link rel="stylesheet" type="text/css" href="{% static 'gallery.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    h1{
+        color: white;
+        display: flex;
+        background-color: rgb(157, 211, 229);
+        height: 60px;
+        align-items:center;
+        justify-content: center;
+        margin-top: 5.5%
+}
+
+    </style>
 </head>
 <body>
-    <h1>Gallery</h1>
-    <div id="image-container">
-        {% for image in images reversed %}
-            {% if forloop.counter0|divisibleby:5 %}
-                <div class="row">
-            {% endif %}
-            <div class="image">
-                <img src="{{ image.image.url }}" alt="{{ image.title }}">
-                <p>{{ image.title }}</p>
-            </div>
-            {% if forloop.counter|divisibleby:5 or forloop.last %}
+    <h1 class="text-center">Gallery</h1>
+    <div class="container">
+       
+        <div class="row" id="image-container">
+            {% for image in images reversed %}
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="image">
+                        <img src="{{ image.image.url }}" alt="{{ image.title }}" class="img-fluid">
+                        <p class="text-center">{{ image.title }}</p>
+                    </div>
                 </div>
-            {% endif %}
-        {% empty %}
-            <p>No images available</p>
-        {% endfor %}
+            {% empty %}
+                <p class="col-12 text-center">No images available</p>
+            {% endfor %}
+        </div>
     </div>
-    <script src="{% static 'gallery.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-</html>
+
 {% include 'footer.html'%}

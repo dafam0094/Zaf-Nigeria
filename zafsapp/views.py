@@ -2,9 +2,7 @@ from django.shortcuts import render, get_object_or_404,redirect
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.contrib.admin.views.decorators import staff_member_required
-from PIL import Image
-from django.conf import settings
-from django.http import JsonResponse
+from .forms import *
 from django.core.exceptions import ObjectDoesNotExist
 from .models import *
 
@@ -14,7 +12,15 @@ def Home(request):
     return render(request, 'home.html')
 
 def Donate(request):
-    return render(request, 'donate.html')
+    if request.method == 'POST':
+        form = DonationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('donate')
+    else:
+        form = DonationForm()
+
+    return render(request, 'donate.html', {'form': form})
 
 def publication_api(request):
     try:
@@ -33,17 +39,18 @@ def publication_api(request):
 
     except ObjectDoesNotExist:
         error_message = 'No publication found'
-        return render(request, 'index.html', {'error': error_message})
+        return render(request, 'publication.html', {'error': error_message})
         
 def Join(request):
     if request.method=="POST":
         memberdata = member.objects.create(
-            first_name = request.POST['first_name'],
-            middel_name = request.POST['middel_name'],
-            last_name = request.POST['last_name'],
+            full_name = request.POST['full_name'],
             phone_number = request.POST['phone_number'],
             email = request.POST['email'],
-            how_know = request.POST['how_know'])
+            contact_address = request.POST['contact_address'],
+            residential_address = request.POST['residential_address'],
+            how_know = request.POST['how_know'],
+            upload_photo=request.FILES.get('upload_photo'),)
 
         
         memberdata.save()
@@ -51,22 +58,16 @@ def Join(request):
     return render(request,'joinus.html')
     
 
-def Contact(request):
+def contact(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('message')
-        # Additional form validation and processing logic can be added here
-        send_mail(
-            'Contact Form Submission',
-            f'Name: {name}\nEmail: {email}\nMessage: {message}',
-            settings.DEFAULT_FROM_EMAIL,
-            ['dafamabelnansak@gmail.com'],
-            fail_silently=False,
-        )
-        return render(request, 'contact.html', {'success': True})
-    return render(request, 'contact.html')
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = ContactForm()
 
+    return render(request, 'contact.html', {'form': form})
 
 def Member(request):
     memberdata = member.objects.all()

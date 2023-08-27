@@ -9,8 +9,8 @@
 .header{
   color: white;
   display: flex;
-  background-color: aqua;
-  height: 90px;
+  background-color: rgb(157, 211, 229);
+  height: 60px;
   align-items:center;
   justify-content: center;
 }

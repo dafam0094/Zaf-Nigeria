@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'zafsapp.context_processors.current_year',
             ],
         },
     },
@@ -128,14 +129,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # Use SMTP email backend
-
-EMAIL_HOST = 'smtp.gmail.com'  # SMTP server host
-EMAIL_PORT = 587  # SMTP server port
-EMAIL_HOST_USER = 'dafamabelnansak@gmail.com'  # SMTP account username
-EMAIL_HOST_PASSWORD = 'abel09033432658'  # SMTP account password
-EMAIL_USE_TLS = True  # Use TLS encryption
 
 # settings.py
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -7,3 +7,6 @@ admin.site.register(member)
 admin.site.register(Team)
 admin.site.register(Gallery)
 admin.site.register(Publication)
+admin.site.register(Contact)
+admin.site.register(Donation)
+

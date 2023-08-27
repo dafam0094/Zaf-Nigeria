@@ -9,6 +9,6 @@ urlpatterns = [
     path('donate/', views.Donate, name= 'donate'),
     path('about/', views.team_information, name='about'),
     path('joinus/', views.Join, name= 'joinus'),
-    path('contact/', views.Contact, name= 'contact'),
+    path('contact/', views.contact, name= 'contact'),
     path('member/', views.Member, name= 'member'),
 ] 

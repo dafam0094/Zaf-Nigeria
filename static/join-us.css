@@ -8,11 +8,4 @@
         .form-group{
             color: black;
         }
-        h1{
-            color: white;
-            display: flex;
-            background-color: aqua;
-            height: 90px;
-            align-items:center;
-            justify-content: center;
-        }
+        

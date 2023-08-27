@@ -1,62 +1,85 @@
 {% include 'navbar.html'%}
 {% load static %}
 <head>
-    <link rel="stylesheet" href="{% static 'contact.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+       h1{
+           text-align: center;
+           background-color: rgb(157, 211, 229);
+           color: white;
+           margin-bottom: 30px;
+           height: 60px;
+           margin-top: 5.5%;
+       }
+       .p{
+           font-size: 20px;
+           margin-bottom: 80px;
+       }
+       .contact-span{
+           font-size: 18px;
+           color:rgb(157, 211, 229);
+       }
+       #submit{
+           background-color:rgb(157, 211, 229);
+           color: white;
+           font-size: 20px;
+           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+           width: 150px;
+           margin-bottom: 30px;
+           margin-top: 20px; 
+       }
+       #submit:hover{
+           background-color: blue;
+           opacity: 0.7;
+       }
+
+
+    </style>
 </head>
+<h1>Contact</h1>
+<div class="container">
+        <center>
+            <p class="p">Don’t hesitate to reach out with the contact information below for Inquiries, Support,
+                Donations, Partnership and Sponsorship, or send a message using the form.</p>
+        </center>
 
-
-<form action="">
-    
-    <h1>Contact</h1>
-    <center>
-    <p class="p">Don’t hesitate to reach out with the contact information below for
-     Inquiries, Support, Donations, Partnership and Sponsorship, or 
-     send a message using the form.</p>
-    </center>
-    
-   
-     <div class="div">
-         <div class="div_one">
-             <div class="h2">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="h2">
                     <h2>Get in Touch</h2>
                     <p></p>
-                    <p id="contact-mail">Email: <a href="zionadvocacyfoundationnigeria@yahoo.com">zionadvocacyfoundationnigeria@yahoo.com</a></p>
-                    <p id="contact-phone">Phone: <a href="tel:+1234567890, +2348149925520">+2348068349999, +2348149925520</a></p>
+                    <p id="contact-mail">Email: <span class="contact-span"><a href="zionadvocacyfoundationnigeria@yahoo.com">zionadvocacyfoundationnigeria@yahoo.com</span></a></p>
+                    <p id="contact-phone">Phone:<span class="contact-span"> <a href="tel:+1234567890, +2348149925520">+2348068349999, +2348149925520</span></a></p>
                     <div>
                         <a href="https://www.linkedin.com"><img src="linkedin-logo.png" alt="LinkedIn"></a>
                         <a href="https://wa.me/1234567890"><img src="whatsapp-logo.png" alt="WhatsApp"></a>
                     </div>
-             </div>
-             
-         </div>
-         <div class="div_two">
-             <div class="h2">
-                 <h2>Send Us a Message</h2>
-                 {% if success %}
-        <p class="success-message">Thank you for your message!</p>
-    {% endif %}
-    <form method="POST" action="{% url 'contact' %}">
-        {% csrf_token %}
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" name="name" required>
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email"  class="form-control" name="email" required>
-        </div>
-        <div>
-            <label for="message">Message:</label>
-            <textarea  class="form-control" name="message" required></textarea>
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </form>
+                </div>
             </div>
-             
+            <div class="col-md-6">
+                <div class="h2">
+                    <h2>Send Us a Message</h2>
+                    <form method="POST" action="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <div>
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div>
+                            <label for="message">Message:</label>
+                            <textarea class="form-control" name="message" required></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
 
-         </div>
-     </div>
-     {% include 'footer.html'%}
-</form> 
+{% include 'footer.html'%}

@@ -5,11 +5,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Donation Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+  
+
+/* Add some spacing */
+.mt-3 {
+    margin-top: 15px;
+}
+
+/* Style the form labels */
+.form-group label {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.form-group{
+
+}
+
+/* Style the form fields */
+.form-control {
+    border-radius: 0;
+}
+
+/* Style the Donate button */
+.btn-primary {
+    background-color:  rgb(157, 211, 229);
+    border-color: #007bff;
+    border-radius: 5;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 45px;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+.form-control{
+    width: 400px;
+    border-radius: 20px;
+    border-color:  #007bff;
+    height: 50px;
+}
+#span{
+    font-weight: bold;
+}
+#heading{
+    text-align: center;
+    background-color: rgb(157, 211, 229);
+    color: white;
+    margin-bottom: 30px;
+    height: 60px;
+    margin-top: 5.5%;
+}
+
+    </style>
 </head>
 <body>
-    
+    <h1 id="heading">Donate</h1>
+    <div class="container mt-5">
+        <h1>Partner with us</h1>
+        <p>You can partner with us to help realize our mission and commitment to the Nigeria dream. Together, we can beam the spotlight on Nigeria and beyond.</p>
+        <h2>You can send your donations to the account details below:</h2>
+        <p>
+            <span class="font-semibold text-base" id="span">Account Name:</span>
+        </p>
+        <p>
+            <span class="font-semibold text-base" id="span">Account Number:</span>
+        </p>
+        <p>
+            <span class="font-semibold text-base" id="span">Bank Name:</span>
+        </p>
+        <h1>You can also make online payment</h1>
+        <p>You can fill the details</p>
+        <form method="post" id="donation-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.amount.id_for_label }}">Full Name:</label>
+                    {{ form.name }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.amount.id_for_label }}">Email:</label>
+                    {{ form.Email }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.amount.id_for_label }}">Amount:</label>
+                    {{ form.amount }}
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 {% include 'footer.html'%}
 </html>
