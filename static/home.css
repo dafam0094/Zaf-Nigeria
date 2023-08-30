@@ -5,10 +5,10 @@
         font-family: Arial, sans-serif;
     }
     .card-img{
-        height: 615px;
+        height: 80px;
     }
     .card-title{
-        font-size: 24px;
+     
         color:white;
         margin-top: 60px;
     }
@@ -17,7 +17,7 @@
         color: white;
         margin-top: 60px;
         line-height: 30px;
-        font-size: 20px;
+       
     }
     .card-img-overlay{
         background: rgba(0, 0, 0, 0.7);
@@ -44,8 +44,8 @@
         display:grid;
          grid-template-columns: 1fr 1fr 1fr;
          column-gap: 100px;
-        font-weight: 700;
-        font-size: 24px;
+        
+        
         margin-left: 150px; 
         background-color:rgb(157, 211, 229); 
     }
@@ -62,7 +62,7 @@
           width: 400px;
     }
     .text{
-        font-size: 24px;
+        
     }
     
     

@@ -9,16 +9,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home Page</title>
     <link rel="stylesheet" href="{% static 'home.css' %}">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <style>
+        *{
+        margin: 0%;
+        padding: 0%;
+        font-family: Arial, sans-serif;
+    }
         .card-title{
         font-size: 50px;
         }
         .card-text{
         width: 900px;
         color: white;
-        margin-top: 60px;
+        margin-top: 30px;
         line-height: 30px;
         font-size: 20px;
+        height: 600px;
     }
     .header{
         color: rgb(157, 211, 229);
@@ -30,6 +39,7 @@
         font-size: 25px;
         background-color: rgb(157, 211, 229);
         color: black;
+        margin-bottom: 20px;
     }
     #bt:hover{
         opacity: 0.7;
@@ -45,18 +55,40 @@
         color:rgb(157, 211, 229);
         font-size: 30px; 
     }
+    #cont{
+        color: aliceblue;
+        max-width: 900px;
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
+    .card{
+        height: 800px;
+    }
+    #img1{
+        height: 800px;
+    }
+    #title{
+        margin-top: 10px;
+        font-size: 65px;
+    }
+    
     </style>
 </head>
 <body>
 
     <div class="card text-dark">
-        <img src="{% static 'images/img-1.png' %}" class="card-img" alt="...">
+        <img src="{% static 'images/img-1.png' %}" class="card-img" id="img1" alt="...">
         <div class="card-img-overlay">
             <div class="d-flex flex-column justify-content-center align-items-center h-100">
-                <h5 class="card-title text-center mb-3">Welcome to ZAF Nigeria</h5>
-                <p class="card-text text-center mb-4">We are a non-profit organization dedicated to advocating for Community Growth and Development, social freedom, and justice. This platform is born from a genuine burden towards building a society and a nation free from human rights abuse and social vices. We are the voice that preaches justice, freedom, and development in all areas of life.</p>
-                <a href="{% url 'joinus' %}" class="btn btn-primary mb-2">Join Us</a>
-                <a href="{% url 'donate' %}" class="btn btn-danger">Donate Now</a>
+                <h5 class="card-title text-center mb-3" id="title">Welcome to ZAF Nigeria</h5>
+                <p class="content" id="cont">
+                         This platform is born from a genuine burden towards building a society and a nation free from human rights abuse and social vices. We are the voice that preaches justice, freedom, and development in all areas of life.
+                    </p>
+                    
+                <a href="{% url 'joinus' %}" class="btn btn-primary mb-2" id="bt">Join Us</a>
+               
+                <a href="{% url 'donate' %}" class="btn btn-danger" id="bt1">Donate Now</a>
             </div>
         </div>
     </div>
